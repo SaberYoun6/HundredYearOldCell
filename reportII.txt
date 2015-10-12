@@ -1,0 +1,3 @@
+ so the objective is to create a bacatria cell that can cause create mutation in
+ a similar fashion to the way a normal cell would work
+ 
