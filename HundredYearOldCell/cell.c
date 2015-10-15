@@ -19,7 +19,12 @@ main()
             printf("foo");
         }
 
-        char* itema= "pokeball"
+        char* itema= "pokeball";
+        for (x=0; x<strlen(itema);x++)
+        {
+            printf("%c ", itema[x]);
+        }
+        printf("%s\n" );
     }
     getchar();
 
