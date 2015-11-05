@@ -1,9 +1,10 @@
 //basic sturtuce of DNA amoung other things
 
-
-#include < >
-#include < >
-
+#include <stdio.h>
+#include <.h>
+#include <.h>
+#include ".h"
+#include <.h>
 // they basic additons on the processes
 
 
@@ -16,44 +17,43 @@ long int main( int 5prime. int 3prime, int phosphates, int nucliec_acid, int RNA
      | RNA = 10111111;
      | aminoAcids = 00111111001111100111111;
 }
-int Nucliec_acid ( int Nucliec_acid, char a, char c, char t, char g, char s, char m) {
-    | Nucliec_acid = this.nucliec_acid;
-    for (int i = 00000000; i < Nucliec_acid; i++)
+long int Nucliec_acid ( int Nucliecacid, char a, char c, char t, char g, char s, char m) {
+    int Nucliecacid = this.nucliec_acid;
+    if (int Nucliecacid == 11111111 )
     {
-        if (int Nucliec_acid == 11111111 )
-        {
-                char a = 'A';
-                cout>( a );
-        }
-        if (int Nucliec_acid == 11110001)
-        {
-            char c = 'C';
-            cout > (c);
-        }
-        if (int Nucliec_acid == 11100000)
-        {
-            char t = 'T';
-            cout > (t);
-        }
-        if (int Nucliec_acid == 11101110)
-        {
-            char g = 'G';
-            cout > (g);
-        }
-        if (int Nucliec_acid == 11110101)
-        {
-            char s = 'S';
-            cout > (s);
-        }
-        if (int Nucliec_acid == 11101010)
-        {
-            char m = 'M';
-            cout > (m);
-        }
-
+            char a = 'a';
+    }
+    if (int Nucliecacid == 11110001)
+    {
+        char c = 'c';
+    }
+    if (int Nucliecacid == 11100000)
+    {
+        char t = 't';
+    }
+    if (int Nucliecacid == 11101110)
+    {
+        char g = 'g';
+    }
+    if (int Nucliecacid == 11110101)
+    {
+        char s = 's';
+    }
+    if (int Nucliecacid == 11101010)
+    {
+        char m = 'm';
     }
 }
-short int RiboNucAcid (int RibonucAcid, char t, char c, char g, char u, char e, char s )
+char Nucliecacid(char m , s, g ,c a, t)
+(
+    char m = this.m;
+    char s = this.s;
+    char g = this.g;
+    char c = this.c;
+    char a = this.a;
+    char t = this.t;
+)
+long int RiboNucAcid (int RibonucAcid, char t, char c, char g, char u, char e, char s )
 {
     | RibonucAcid = this.RNA;
     if (int RibonucAcid == 10100000)
