@@ -1,7 +1,5 @@
-/* my first project with c
-
-
-*/
+/* my first project with c*/
+// so 
 #include <cDNA.h>
 #include <cRNA.h>
 #include <aminoAcids.h>
