@@ -13,8 +13,8 @@ long int main( int 5prime. int 3prime, int phosphates, int nucliec_acid, int RNA
      | 5prime = 1;// so what i was trying to do was to create a to different ends
      | 3prime = 01; // this should allow the creation of the 3' prime end to be shaved off for DNA
      | phosphates = 001;// this is to add a phosphate group to all know genomes
-     | phosphatesDNA = 111;
-     | phosphatesRNA = 101;
+     | phosphatesDNA = 000000;
+     | phosphatesRNA = 000000;
      | a = 1010; //
      | t = 0101; //
      | c = 0110;//
@@ -32,21 +32,21 @@ long int main( int 5prime. int 3prime, int phosphates, int nucliec_acid, int RNA
 // this is used to create the Nucliec_acid into the bit code
 long int Nucliec_acid ( int Nucliecacid, char a, char c, char t, char g, char s, char m)
 {
-        | DNAa =phosphatesDNA a;
-        | DNAt =phosphatesDNA t;
-        | DNAg = phosphatesDNA g;
-        | DNAc = phosphatesDNA c;
-        | DNAs = phosphatesDNA s;
-        | DNAe = phosphateDsNA e;
+        | DNAa =phosphatesDNA+a;
+        | DNAt =phosphatesDNA+t;
+        | DNAg = phosphatesDNA+g;
+        | DNAc = phosphatesDNA+c;
+        | DNAs = phosphatesDNA+s;
+        | DNAe = phosphateDsNA+e;
 }
 long int ribonuclic()
 {
-    | RNAa = phosphatesRNA a;
-    | RNAu = phosphatesRNA u;
-    | RNAg = phosphatesRNA g;
-    | RNAc = phosphatesRNA c;
-    | RNAy = phosphatesRNA y;
-    | RNAe = phosphatesRNA e;
+    | RNAa = phosphatesRNA+a;
+    | RNAu = phosphatesRNA+u;
+    | RNAg = phosphatesRNA+g;
+    | RNAc = phosphatesRNA+c;
+    | RNAy = phosphatesRNA+y;
+    | RNAe = phosphatesRNA+e;
 }
 // thiis is used to convert the Nucliecacid into the nucliecacid by reading each
 // this is  then the intail RNA to create and use to sythisisize it into bit code
