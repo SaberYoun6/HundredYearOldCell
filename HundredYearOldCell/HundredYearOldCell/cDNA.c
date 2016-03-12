@@ -10,17 +10,27 @@ int main {int DNA char* reversing}
 
 
 }
-int DNA{long int DNAa,long int DNAt,long int DNAg,long int DNAc, long int DNAs,long int DNAe,}
+int organicmole{long int DNAa,long int DNAt,long int DNAg,long int DNAc, long int DNAs,long int DNAe,}
 {
- if  {DNAa xor DNAt}
+ if  (DNAa ^ DNAt)
+  while (DNAa != DNAt)
    
+  if (DNAg ^ DNAc) 
+   while(DNAg!=DNAc)
+
+  if (DNAs ^ DNAe)
+   while( DNAs !=  DNAe)
+
+else:
+
+  return 0;
 
 }
 
 
 
 // hard coding the DNA;
-char* revesring (char* hardcode, char c, char a, char t, char g, char s, char m)
+char* revesring (char* hardcode, char c, char a, char t, char g, char s, char e)
 {
     
 }
