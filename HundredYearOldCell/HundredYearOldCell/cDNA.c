@@ -5,8 +5,21 @@
 //creating the DNA backbone in the bits to code;
 int main {int DNA char* reversing}
 {
-
-
+if (long int DNAs && long int DNAe )
+	  long int DNAe; 
+	  long int DNAs;
+else
+return 0;
+if (long int DNAa && long int DNAt)
+   long int DNAt;
+   long int DNAa;
+else
+   return 0;
+if (long int DNAg && long int DNA c)
+   long int DNAc;
+   long int DNAg;
+else
+   return 0;
 
 
 }
