@@ -13,13 +13,11 @@ int particleParticle(int a)
 int changeParticle(int a){
 	return a=+1;
 }
-int particleParticles(int a){
-	int ab;
+_Bool particleParticles(int a){
 	if (a * a) {
-		return ab=1;
-	}
+		return true}
 	else {
-		return ab=0;
+		return false
 	}
 
 }
@@ -33,11 +31,9 @@ int main() {
 	printf("%i should be a+1\n",particleParticle(b));
 	printf("%i should be a+1\n",particleParticle(c));
 	printf("%i should be a*a\n",particleParticle(d));
-	printf("%i should be true\n"  ,particleParticles(particleParticle(a)));
-	printf("%i shoulde be false\n",particleParticles(particleParticle(b)));
-	printf("%i should be true\n"  ,particleParticles(particleParticle(d)));
+	printf("%b should be true\n"  ,partilceParticles(particleParticle(a)));
+	printf("%b shoulde be false\n",particleParticles(particleParticle(b)));
+	printf("%b should be true\n"  ,particleParticles(particleParticle(d)));
 
-	return 0;
 }
-
 	
