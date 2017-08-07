@@ -3,3 +3,6 @@
 //
 int particleParticle(int);
 int changeParticle(int);
+int particleParticles(int);
+void radioactiveDecay(int);
+double constant(int , double, double);
