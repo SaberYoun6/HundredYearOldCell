@@ -24,13 +24,16 @@ int particleParticles(int a){
 	}
 
 }
-double constant(int a, double rate,double constants){
-	double time = 30000;
-	double aw;
-	if (rate >= constants){
-		return aw = -constants * time + a;
+float constant(int a, float rate,float constants,int n){
+	float time1 =0;
+	float time = 30000;
+	float aw;
+	float frp = expf(-constants*(time-time1));
+	if (rate <= constants){
+		aw = -constants * time + a;
+		return aw;
 	}else if (rate == constants * 4 *a ) {
-	      	aw= exp(constants *time / rate) * a;
+	      	aw= powf(frp,n) * a;
 		return aw;
 	}
 }
@@ -41,10 +44,11 @@ int radioacitveDecay(int b){
 }
 int main() {
 	int a,b,c,d;
-	double rate1;
-	double constant1;
+	float rate1;
+	float constant1;
 	rate1 = 1.23;
 	constant1 = 3.12;
+	int number  = 23;
 	a = 4*4;
 	b = 1+1;
 	c = c+8;
@@ -56,7 +60,7 @@ int main() {
 	printf("%i should be true\n"  ,particleParticles(particleParticle(a)));
 	printf("%i shoulde be false\n",particleParticles(particleParticle(b)));
 	printf("%i should be true\n"  ,particleParticles(particleParticle(d)));
-	printf("%d rate in which d: , %d rate in which b:, %d the rate in which both should change", constant(d, rate1, constant1) ,constant(b,rate1,constant1));
+	printf("%d rate in which d:" , rate1);
 	return 0;
 }
 
