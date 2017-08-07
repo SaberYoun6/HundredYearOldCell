@@ -60,7 +60,7 @@ int main() {
 	printf("%i should be true\n"  ,particleParticles(particleParticle(a)));
 	printf("%i shoulde be false\n",particleParticles(particleParticle(b)));
 	printf("%i should be true\n"  ,particleParticles(particleParticle(d)));
-	printf("%d rate in which d:" , rate1);
+	printf("%f rate in which d:" , rate1);
 	return 0;
 }
 
