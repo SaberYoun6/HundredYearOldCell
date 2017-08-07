@@ -50,4 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+#Just incase of a vim swp files endup
 *.swp
