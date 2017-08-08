@@ -7,43 +7,51 @@ int particleParticle(int a)
 {
 	if (a == a * a){
 		return a=a*a;
-	} else if (a = a+ 1) {
+	} else if (a = a+ 1) 
+	{
 		return changeParticle(a);
 	}
 }
-int changeParticle(int a){
-	return a=a+1;
+int changeParticle(int a)
+{
+		return a=a+1;
 }
-int particleParticles(int a){
+int particleParticles(int a)
+{
 	int ab;
-	if (a == a * a) {
+	if (a == a * a) 
+	{
 		return ab=1;
-	}
-	else {
+	} else {
 		return ab=0;
 	}
 
 }
-float constant(int a, float rate,float constants,int n){
-	float time1 =0;
-	float time = 30000;
+float constant(int a, float rate,float constants,int n)
+{
+	float time1 =60000;
+	float time = 250.2347;
 	float aw;
-	float frp = expf(-constants*(time-time1));
-	float frp = powf((1-frp),n); 
+	float frps = powf((1-frp(constants,time,time1)),n); 
 	if (rate <= constants){
 		aw = -constants * time + a;
 		return aw;
 	}else if (rate == constants * 4 *a ) {
-	      	aw= powf(frp,n) * a;
+		aw= powf(frps,n) * a;
 		return aw;
 	}
 }
-int radioacitveDecay(int b){
-	double halflife;
-	
-
+int radioacitveDecay(int b)
+{
+		double halflife;
 }
-int main() {
+float frp(float constants,float time,float time1)
+{
+	float frp = (-constants * (time-time1));
+	return frp; 
+}
+int main() 
+{
 	int a,b,c,d;
 	float rate1;
 	float constant1;
@@ -61,8 +69,6 @@ int main() {
 	printf("%i should be true\n"  ,particleParticles(particleParticle(a)));
 	printf("%i shoulde be false\n",particleParticles(particleParticle(b)));
 	printf("%i should be true\n"  ,particleParticles(particleParticle(d)));
-	printf("%.8f rate in which d:" , constant(d,rate1,constant1,number));
+	printf("%.2f rate in which d:" , constant(particleParticle(d),rate1,constant1,number));
 	return 0;
 }
-
-	
