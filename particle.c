@@ -29,6 +29,7 @@ float constant(int a, float rate,float constants,int n){
 	float time = 30000;
 	float aw;
 	float frp = expf(-constants*(time-time1));
+	float frp = powf((1-frp),n); 
 	if (rate <= constants){
 		aw = -constants * time + a;
 		return aw;
