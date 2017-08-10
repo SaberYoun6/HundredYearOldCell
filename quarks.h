@@ -1,4 +1,9 @@
-UniConstant(float c, float h, float me, float e_2);
-nucleiM(float a ,z);
-EmpConst();
-	
+float **quark(float,float,float,float);
+float **upQuark(float,float,float);
+float **downQuark(float,float,float);
+void **quarkConfinementPrincipal(float,float,float);
+float **strangeQuarks();
+float **charmQuarks();
+float **topQuarks();
+float **botQuarks();
+
