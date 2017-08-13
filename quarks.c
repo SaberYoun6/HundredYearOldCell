@@ -19,7 +19,7 @@ void **quarkConfimentPrinicpal(int n, float energy,float i ){
 			{
 			        1=abs(powf(U[j][k],2));
 				U[i][j]=expf(i(alpha[j] + beta[k])*U[j][k]);
-				if (U[j][k] == U[k][j]; 
+				if (U[j][k] == U[k][j]) 
 				{
 					if (U[j][j] > 0) 
 				
