@@ -5,8 +5,11 @@
 #define M_PI 3.14159265358979323846
 //the quark will be defined then it will be used to generate the math in the matrix in which i will be using
 //the matrix will be a 2d to use them time 
-void **quarkConfimentPrinicpal(float n, float energy,float i ){
-	int , j,k,n =0;
+void **quarkConfimentPrinicpal(int n, float energy,float i ){
+	int j,k;
+	n =0;
+	int *a, b;
+	int ** U, t, deltai;
 	float a, b,delta, capdelta;
 	while(n >= 4)
 	{
@@ -40,7 +43,7 @@ void **quarkConfimentPrinicpal(float n, float energy,float i ){
 			       if( t < 1/ sqrt(2)) 
 			       {
 			       capdelta = -i(capdelta*t + t*capdelta);
-			       2*capdelta =2capdelta(t*t + t*t);
+			       2*capdelta =2*capdelta(t*t + t*t);
 			       	if ( 2* capdelta <= 2* capdelta(t*t + t*t) <=4 capdelta *t^2;
 			       	{
 					if (t => 1 / sqrt(2) || capdelta = 0)
@@ -51,15 +54,15 @@ void **quarkConfimentPrinicpal(float n, float energy,float i ){
 						T= 1/2i[sqrt(1+sqrt(b*b(1+c*c) - ((bc)(bc))))];
 						if (t = 1/sqrt(2) || approach(b,0) || b*c !=0)
 						{
-							if (t[j][k] == t[k][j] || delta[j][k] == delta[k][j])
+							if (t[j][k] == t[k][j] || deltai[j][k] == deltai[k][j])
 			       				{ 
-							       T[j][k] = t[j][k] * exp(i* delta[j][k];
+							       T[j][k] = t[j][k] * exp(i* deltai[j][k];
 							}
 							delta[j][j] =M_PI/2;
-							U[j][j]= 1 - 2t[j][j];
+							U[j][j]= 1 - 2*t[j][j];
 							if (0 < t[j][j]  && t[j][j] < 1/2 && j != k) 
 							{
-							if (-M_PI/2 < delta[j][k] && delta[j][k] <= M_PI/2 && t[1][k] > 0 && t[j][k] != 1)
+							if (-M_PI/2 < deltai[j][k] && deltai[j][k] <= M_PI/2 && t[1][k] > 0 && t[j][k] != 1)
 							{
 
 							t[j][j] = 1/2(1-abs(U[j][j]));
@@ -70,16 +73,16 @@ void **quarkConfimentPrinicpal(float n, float energy,float i ){
 									}
 									for (l = 0; l < n; l++)
 									{
-									float condition = sin(delta[j][k]);
+									float condition = sin(deltai[j][k]);
 											if (1 <= j && j<= k && k < = n )
 											t[j][k]=(t[j][l]*t[k][l]* cos( delta[j][l] -delta[k][l]))/condition;
 										       if(t[j][j] == t[k][k]) {
 										       }
 									if(t[j][j] != t[j][k] || k != j){
-							 t[j][j] = 1/2 -1/2 sqrt(1-4*t[j][k]*t[j][k]);
+							 t[j][j] = 1/2 -1/2*sqrt(1-4*t[j][k]*t[j][k]);
 					 if(1<=j && j < k && k <= n) {
-			float cond = (1-t[j][j]-t[k][k])sin(delta[j][k];
-		        t[j][k] = t[j][l]* t[k][l]* cos(delta[j][l] - delta[k][l])/cond;
+			float cond = (1-t[j][j]-t[k][k])sin(deltai[j][k];
+		        t[j][k] = t[j][l]* t[k][l]* cos(deltai[j][l] - deltai[k][l])/cond;
 		       }
 		       }
 		       }		       
@@ -111,5 +114,6 @@ float ** topQuarks(){
 }
 float ** botQuarks(){
 int main() {
-	
+	println(" if the " , quarkConfinementPrinipical(3,260.00,-.293450);
+}	
 
