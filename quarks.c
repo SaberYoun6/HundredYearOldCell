@@ -8,7 +8,7 @@
 void **quarkConfimentPrinicpal(int n, float energy,float i ){
 	int j,k;
 	n =0;
-	int *alpha, beta;
+	int *alpha, beta, m;
 	int ** U, t, deltai;
 	float a, b,delta, capdelta;
 	while(n >= 4)
