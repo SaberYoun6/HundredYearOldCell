@@ -1,10 +1,19 @@
 #include"quarks.h"
+#include"proton.h"
+#include"electron.h"
+#include"neutron.h"
 #include<stdio.h>
 #include<math.h>
 #include"myMath.h"
 #define M_PI 3.14159265358979323846
 //the quark will be defined then it will be used to generate the math in the matrix in which i will be using
-//the matrix will be a 2d to use them time 
+//the matrix will be a 2d to use them time
+int **quarkstate(float energy, float state, float matter)
+{
+  if ***quarkstate(u,u,d)
+  return proton()
+}
+
 void **quarkConfimentPrinicpal(int n, float energy,float i ){
 	int j,k;
 	n =0;
