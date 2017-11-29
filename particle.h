@@ -6,5 +6,5 @@ int particleParticle(int);
 int changeParticle(int);
 int particleParticles(int);
 void radioactiveDecay(int);
-float constant(int , float, float,int);
+float times(int , float , float,int);
 float frp(float,float,float);
