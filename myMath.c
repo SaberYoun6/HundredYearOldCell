@@ -6,11 +6,11 @@ float approach(float a,float b)
 	
 		if ( a != b  || a > b || a< b) {
 		
-			return b
+			return b;
 	
 		}
 		else{
-			return a
+			return a;
 		}
-	}
-}
+        i++;
+}  
