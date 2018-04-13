@@ -14,10 +14,6 @@ typedef struct Quark {
    float matter;
 } Quark;
 
-
-
-
-
 void **quarkConfimentPrinicpal(int n, float energy,float i ){
 	int j,k;
 	n =0;
@@ -57,7 +53,7 @@ void **quarkConfimentPrinicpal(int n, float energy,float i ){
 			       {
 			       capdelta = -i(capdelta*t + t*capdelta);
 			       2*capdelta =2*capdelta(t*t + t*t);
-			       	if ( 2* capdelta <= 2* capdelta(t*t + t*t) <=4 capdelta *t^2;
+			       	if ( 2* capdelta <= 2* capdelta(t*t + t*t) <=4 capdelta *t^2);
 			       	{
 					if (t => 1 / sqrt(2) || capdelta = 0)
 					{
@@ -87,7 +83,7 @@ void **quarkConfimentPrinicpal(int n, float energy,float i ){
 									for (l = 0; l < n; l++)
 									{
 									float condition = sin(deltai[j][k]);
-											if (1 <= j && j<= k && k < = n )
+											if (1 <= j && j<= k && k <= n )
 											t[j][k]=(t[j][l]*t[k][l]* cos( delta[j][l] -delta[k][l]))/condition;
 										       if(t[j][j] == t[k][k]) {
 										       }
