@@ -5,9 +5,9 @@
 #include"particle.h"
 int particleParticle(int a)
 {
-	if (a == a * a){
+	if (a == a){
 		return a=a*a;
-	} else if (a = a+ 1) 
+	} else if (a != a) 
 	{
 		return changeParticle(a);
 	}
@@ -19,18 +19,18 @@ int changeParticle(int a)
 int particleParticles(int a)
 {
 	int ab;
-	if (a == a * a) 
+	if (a == (a +1) ) 
 	{
-		return ab=1;
-	} else {
 		return ab=0;
+	} else {
+		return ab=1;
 	}
 
 }
 float constant(int a, float rate,float constants,int n)
 {
 	float time1 =60000;
-	float time = 250.2347;
+	float time = 0.00001;
 	float aw;
 	float frps = powf((1-frp(constants,time,time1)),n); 
 	if (rate <= constants){
@@ -43,7 +43,8 @@ float constant(int a, float rate,float constants,int n)
 }
 int radioacitveDecay(int b)
 {
-		double halflife;
+	double halflife;
+
 }
 float frp(float constants,float time,float time1)
 {
