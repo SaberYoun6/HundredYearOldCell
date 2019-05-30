@@ -12,4 +12,4 @@
 #include<HundredYearOldCell/kernel.h>
 
 
-static 
+#ifdef 
