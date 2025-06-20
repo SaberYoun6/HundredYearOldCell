@@ -15,7 +15,7 @@ if (long int DNAa && long int DNAt)
    long int DNAa;
 else
    return 0;
-if (long int DNAg && long int DNA c)
+if (long int DNAg && long int DNAc)
    long int DNAc;
    long int DNAg;
 else
