@@ -30,6 +30,7 @@ int atomicCompostion(int neutron, int proton, int electron);
 int atomicDecompostion(int atomic_compostion,float glowing,float radius, int temperature, int shoving_nuertons, int shoving_protons, int shoving_electrons);
 int cloudStruct( int electron, int valent_shell);
 */
+int stoichometry(struct Atom a, struct Atom a1);
 int rateLimiting(struct Atom a , struct Atom a1);
 //struct Compound hydrogenBonds(struct Compound c1,struct Compound  c2);
 //struct Compound colventBonds(struct Atom a, struct Atom a1);

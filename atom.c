@@ -3,6 +3,7 @@
 #include"atom.h"
 #include<math.h>
 #include<string.h>
+#include<stdlib.h>
 //#define radius 12412345.0
 
 
@@ -81,12 +82,30 @@ struct Compound ionicBond( struct Atom a,struct Atom a1){
 	if (a.electron <=3 && a.electron < 0 || a1.electron >=-4  && a1.electron < 0){
 	}
 }
+int * moleRatio(struct Atom a, int count){
+	int mole = 0;
+	int stuffLeftOver=a.currentKnow % a.atomicMass;
+	int * generator=(int*)malloc(count*sizeof(int));
+	int totalAmountOfThatCanGenerate= a.currentKnow / a.atomicMass;
+	if (!generator)
+		return NULL;
+	mole = (totalAmountOfThatCanGenerate >= 0) ? totalAmountOfThatCanGenerate : 0 ;
+	generator[0]=stuffLeftOver;
+	generator[1]=totalAmountOfThatCanGenerate;
+	generator[2]=mole;
+	generator[3]=0;
+	return generator;
+}
+
+int stoichiometry(struct Atom a, struct Atom a1){
+
+}
 int rateLimiting(struct Atom a, struct Atom a1){
 	int  rateLimiting=0;
-       	if (a.currentKnow < a1.currentKnow ) {
-		rateLimiting = (a.valenceElectron >= a1.valenceElectron) ? (a1.currentKnow * (a1.valenceElectron / a.valenceElectron)) : (a1.currentKnow * (a.valenceElectron / a1.valenceElectron));
+       	if (a.currentKnow <= a1.currentKnow ) {
+		rateLimiting = (a.valenceElectron >= a1.valenceElectron) ? (a1.currentKnow * (a1.valenceElectron % a.valenceElectron)) : (a1.currentKnow * (a.valenceElectron % a1.valenceElectron));
 	}else{
-		rateLimiting =  (a.valenceElectron <= a1.valenceElectron) ? (a.currentKnow *  (a.valenceElectron / a1.valenceElectron)) : (a.currentKnow*(a1.valenceElectron / a.valenceElectron)) ; 
+		rateLimiting =  (a.valenceElectron <= a1.valenceElectron) ? (a.currentKnow *  (a.valenceElectron % a1.valenceElectron)) : (a.currentKnow*(a1.valenceElectron % a.valenceElectron)) ; 
 	}
 	return rateLimiting;		
 }
@@ -99,8 +118,14 @@ int main(void){
 	strcpy(carbon.symbol,"C ");
 	strcpy(Sodium.symbol,"NA");
 	carbon.currentKnow, carbon.atomicMass,carbon.proton,carbon.neutron,carbon.electron,carbon.valenceElectron,carbon.neutralPosition,carbon.boilingPoint,carbon.freezingPoint,carbon.metal,carbon.nonMetal, carbon.semiMetal,carbon.hydrogenBond= 121,12,6,6,6,-4,6,3825,3825,0,1,0,0;
-	Sodium.currentKnow, Sodium.atomicMass, Sodium.proton, Sodium.neutron,Sodium.electron,Sodium.valenceElectron,Sodium.neutralPosition,Sodium.boilingPoint, Sodium.freezingPoint,Sodium.metal,Sodium.nonMetal, Sodium.semiMetal,Sodium.hydrogenBond= 69,23,11,11,12,-1,12,883,98,1,0,0,0;
-	int rateofCarbontoSodium=rateLimiting(Sodium,carbon);
-	printf(" of the rate %d",rateofCarbontoSodium);
+	Sodium.currentKnow, Sodium.atomicMass, Sodium.proton, Sodium.neutron,Sodium.electron,Sodium.valenceElectron,Sodium.neutralPosition,Sodium.boilingPoint, Sodium.freezingPoint,Sodium.metal,Sodium.nonMetal, Sodium.semiMetal,Sodium.hydrogenBond= 78,23,11,11,12,-1,12,883,98,1,0,0,0;
+	int * moleRatioSoduim;
+	if (moleRatioSoduim){
+		moleRatioSoduim=moleRatio(Sodium,4);
+		printf(" of the rate %d\n",moleRatioSoduim[0]);
+		free(moleRatioSoduim);
+	}
+	printf(" of the rate %d\n",&moleRatioSoduim[0]);
+	return 0 ;
 
 }
