@@ -94,7 +94,7 @@ int * moleRatio(struct Atom a, int count){
 	generator[0]=stuffLeftOver;
 	generator[1]=(int)totalAmountOfThatCanGenerate;
 	generator[2]=mole;
-	generator[3]=1;
+	generator[3]=0;
 	return generator;
 }
 //this assumes that both struct will combine with an even temperature
@@ -102,16 +102,18 @@ int chemicalBonds(struct Atom a, struct Atom a1, int temp){
 	int * ratioA = moleRatio(a, 4);
 	int * ratioA1 = moleRatio(a1, 4);
 	int electroStatics = 0;
+	ratioA[3]=2;
+	ratioA1[3]=2;
 	printf("ratioA[0] of %d: ratioA1[0] of %d\n ratioA[2] :%d, ratioA1[2] : %d\n",ratioA[0],ratioA1[0], ratioA[2],ratioA1[2]); 
 	printf("ratio of A: %d :the ratio of A1: %d\n",ratioA[1],ratioA1[1]);
 	if (ratioA[1] < ratioA1[1]){
-		ratioA[2]=(ratioA[2]*-1) - ratioA1[2];
-		ratioA1[2]=(ratioA1[2]*-1) + ratioA[2];
+		ratioA[2] << ratioA1[2];
+		ratioA1[2] >> ratioA[2];
 		printf("ratio A[2] %d :ratio A1[2] %d\n",ratioA[2],ratioA1[2]);
-		ratioA1[3]=(ratioA1[3]) - ratioA[2];
-		ratioA[3]=(ratioA[3]) + ratioA1[2];
+		ratioA1[3] << ratioA[2];
+		ratioA[3] >> ratioA1[2];
 		printf("How much electrostatic is in ratioA : %d How much electrostatic is in:ratioA1: %d\n",ratioA[3],ratioA1[3]);
-		electroStatics = (ratioA[3] + ratioA1[3])<< temp;
+		electroStatics = ratioA[3] + ratioA1[3]* temp;
 		printf("electroStatics is in : %d\n" ,electroStatics); 
 	}else if (ratioA[1] == ratioA1[1]){
 		ratioA1[2] >> ratioA[2];
