@@ -111,7 +111,7 @@ int chemicalBonds(struct Atom a, struct Atom a1, int temp){
 		ratioA1[3]=(ratioA1[3]) - ratioA[2];
 		ratioA[3]=(ratioA[3]) + ratioA1[2];
 		printf("How much electrostatic is in ratioA : %d How much electrostatic is in:ratioA1: %d\n",ratioA[3],ratioA1[3]);
-		electroStatics = ratioA[3] + ratioA1[3]* temp;
+		electroStatics = (ratioA[3] + ratioA1[3])<< temp;
 		printf("electroStatics is in : %d\n" ,electroStatics); 
 	}else if (ratioA[1] == ratioA1[1]){
 		ratioA1[2] >> ratioA[2];
