@@ -84,14 +84,15 @@ struct Compound ionicBond( struct Atom a,struct Atom a1){
 }
 int * moleRatio(struct Atom a, int count){
 	int mole = 0;
-	int stuffLeftOver=a.currentKnow % a.atomicMass;
+	int stuffLeftOver = a.currentKnow % a.atomicMass;
 	int * generator=(int*)malloc(count*sizeof(int));
-	int totalAmountOfThatCanGenerate= a.currentKnow / a.atomicMass;
-	if (!generator)
+	double totalAmountOfThatCanGenerate = a.currentKnow / a.atomicMass;
+	if (!generator){
 		return NULL;
-	mole = (totalAmountOfThatCanGenerate >= 0) ? totalAmountOfThatCanGenerate : 0 ;
+	}
+	mole = (totalAmountOfThatCanGenerate > 0) ? totalAmountOfThatCanGenerate*a.valenceElectron : 0 ;
 	generator[0]=stuffLeftOver;
-	generator[1]=totalAmountOfThatCanGenerate;
+	generator[1]=(int)totalAmountOfThatCanGenerate;
 	generator[2]=mole;
 	generator[3]=0;
 	return generator;
@@ -118,14 +119,26 @@ int main(void){
 	strcpy(carbon.symbol,"C ");
 	strcpy(Sodium.symbol,"NA");
 	carbon.currentKnow, carbon.atomicMass,carbon.proton,carbon.neutron,carbon.electron,carbon.valenceElectron,carbon.neutralPosition,carbon.boilingPoint,carbon.freezingPoint,carbon.metal,carbon.nonMetal, carbon.semiMetal,carbon.hydrogenBond= 121,12,6,6,6,-4,6,3825,3825,0,1,0,0;
-	Sodium.currentKnow, Sodium.atomicMass, Sodium.proton, Sodium.neutron,Sodium.electron,Sodium.valenceElectron,Sodium.neutralPosition,Sodium.boilingPoint, Sodium.freezingPoint,Sodium.metal,Sodium.nonMetal, Sodium.semiMetal,Sodium.hydrogenBond= 78,23,11,11,12,-1,12,883,98,1,0,0,0;
+	Sodium.currentKnow=78;
+	Sodium.atomicMass=23;
+       	Sodium.proton=11;
+       	Sodium.neutron=12;
+	Sodium.electron=11;
+	Sodium.valenceElectron=-1;
+	Sodium.neutralPosition=12;
+	Sodium.boilingPoint=883; 
+	Sodium.freezingPoint=98;
+	Sodium.metal=1;
+        Sodium.nonMetal=0;
+	Sodium.semiMetal=0;
+	Sodium.hydrogenBond=0;
 	int * moleRatioSoduim;
 	if (moleRatioSoduim){
 		moleRatioSoduim=moleRatio(Sodium,4);
-		printf(" of the rate %d\n",moleRatioSoduim[0]);
+		printf(" of the rate %d\n",moleRatioSoduim[1]);
 		free(moleRatioSoduim);
 	}
-	printf(" of the rate %d\n",&moleRatioSoduim[0]);
+	printf(" of the rate %d\n",&moleRatioSoduim[2]);
 	return 0 ;
 
 }
