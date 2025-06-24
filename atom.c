@@ -94,12 +94,42 @@ int * moleRatio(struct Atom a, int count){
 	generator[0]=stuffLeftOver;
 	generator[1]=(int)totalAmountOfThatCanGenerate;
 	generator[2]=mole;
-	generator[3]=0;
+	generator[3]=1;
 	return generator;
 }
+//this assumes that both struct will combine with an even temperature
+int chemicalBonds(struct Atom a, struct Atom a1, int temp){
+	int * ratioA = moleRatio(a, 4);
+	int * ratioA1 = moleRatio(a1, 4);
+	int electroStatics = 0;
+	printf("ratioA[0] of %d: ratioA1[0] of %d\n ratioA[2] :%d, ratioA1[2] : %d\n",ratioA[0],ratioA1[0], ratioA[2],ratioA1[2]); 
+	printf("ratio of A: %d :the ratio of A1: %d\n",ratioA[1],ratioA1[1]);
+	if (ratioA[1] < ratioA1[1]){
+		ratioA[2]=(ratioA[2]*-1) - ratioA1[2];
+		ratioA1[2]=(ratioA1[2]*-1) + ratioA[2];
+		printf("ratio A[2] %d :ratio A1[2] %d\n",ratioA[2],ratioA1[2]);
+		ratioA1[3]=(ratioA1[3]) - ratioA[2];
+		ratioA[3]=(ratioA[3]) + ratioA1[2];
+		printf("How much electrostatic is in ratioA : %d How much electrostatic is in:ratioA1: %d\n",ratioA[3],ratioA1[3]);
+		electroStatics = ratioA[3] + ratioA1[3]* temp;
+		printf("electroStatics is in : %d\n" ,electroStatics); 
+	}else if (ratioA[1] == ratioA1[1]){
+		ratioA1[2] >> ratioA[2];
+		ratioA1[3] << ratioA[2];
+		printf("what is the shift of %d\n" ,ratioA1[3]);
+		electroStatics = ratioA1[3] * temp;
+	}else {
+		ratioA[2] >> 1;
+		ratioA1[2] >> 1;
+		ratioA[3] >> 2;
+		ratioA1[3] << 1;
+		electroStatics = ratioA[3] - ratioA1[3] *temp;
 
+	}
+	return electroStatics;
+	
+}
 int stoichiometry(struct Atom a, struct Atom a1){
-
 }
 int rateLimiting(struct Atom a, struct Atom a1){
 	int  rateLimiting=0;
@@ -118,7 +148,19 @@ int main(void){
 	struct Atom Sodium;
 	strcpy(carbon.symbol,"C ");
 	strcpy(Sodium.symbol,"NA");
-	carbon.currentKnow, carbon.atomicMass,carbon.proton,carbon.neutron,carbon.electron,carbon.valenceElectron,carbon.neutralPosition,carbon.boilingPoint,carbon.freezingPoint,carbon.metal,carbon.nonMetal, carbon.semiMetal,carbon.hydrogenBond= 121,12,6,6,6,-4,6,3825,3825,0,1,0,0;
+	carbon.currentKnow=121;
+	carbon.atomicMass=12;
+	carbon.proton=6;
+	carbon.neutron=6;
+	carbon.electron=6;
+	carbon.valenceElectron=-4;
+	carbon.neutralPosition=6;
+	carbon.boilingPoint=3825;
+	carbon.freezingPoint=3824;
+	carbon.metal=0;
+	carbon.nonMetal=1;
+	carbon.semiMetal=0;
+	carbon.hydrogenBond= 1;
 	Sodium.currentKnow=78;
 	Sodium.atomicMass=23;
        	Sodium.proton=11;
@@ -132,13 +174,14 @@ int main(void){
         Sodium.nonMetal=0;
 	Sodium.semiMetal=0;
 	Sodium.hydrogenBond=0;
+	int * moleRatioCarbon;
 	int * moleRatioSoduim;
 	if (moleRatioSoduim){
-		moleRatioSoduim=moleRatio(Sodium,4);
-		printf(" of the rate %d\n",moleRatioSoduim[1]);
-		free(moleRatioSoduim);
+		int chemicalNaC=chemicalBonds(Sodium,carbon,75);
+		printf("chemicalNaC is %d\n",chemicalNaC);
 	}
-	printf(" of the rate %d\n",&moleRatioSoduim[2]);
+	
+
 	return 0 ;
 
 }
